@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: redis #会根据configserver那边的规则来找文件
+  cloud:
+    config:
+      profile: dev  #redis-dev 规则就是application-profile
+      discovery:
+        enabled: true #开启从注册中心发现配置中心的功能
+        service-id: configServer #注册中心中哪个id是配置中心
+      #  username: #如果配置中心需要账号和密码
+      # password:
+  rabbitmq:
+    username: admin
+    password: admin
+    host: 122.51.208.21
+    port: 5672
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka

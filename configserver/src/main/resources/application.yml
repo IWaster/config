@@ -1,0 +1,22 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: configServer
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/sizheng_self/redis
+          repos:
+            redis:
+              pattern: redis*/dev*,redis*/redis*
+              uri: https://gitee.com/sizheng_self/redis
+        bootstrap: true
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka/
